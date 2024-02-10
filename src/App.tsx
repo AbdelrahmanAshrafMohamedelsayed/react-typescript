@@ -42,7 +42,10 @@ function App() {
       last: "Diana",
     },
   ];
-
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    console.log("Button clicked");
+  };
   return (
     <div className="App">
       <Greet name="Vishwas" isLoggedIn={false} />
@@ -58,6 +61,8 @@ function App() {
           console.log("Button clicked", event, id);
         }}
       />
+      <button onClick={handleClick}>click me</button>
+      {/* <input type="text" onChange={(e) => console.log(e)} /> */}
       <Input value="" handleChange={(event) => console.log(event)} />
       <Container styles={{ border: "1px solid black", padding: "1rem" }} />
       <ThemeContextProvider>

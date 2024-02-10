@@ -1,37 +1,38 @@
 type RandomNumberType = {
-  value: number
-}
+  value: number;
+};
 
 type PositiveNumber = RandomNumberType & {
-  isPositive: boolean
-  isNegative?: never
-  isZero?: never
-}
-
+  isPositive: boolean;
+  isNegative?: never;
+  isZero?: never;
+};
+// never means it will never be true
+// as if you enforce if isPositive then it will never be negative or zero
 type NegativeNumber = RandomNumberType & {
-  isNegative: boolean
-  isPositive?: never
-  isZero?: never
-}
+  isNegative: boolean;
+  isPositive?: never;
+  isZero?: never;
+};
 
 type Zero = RandomNumberType & {
-  isZero: boolean
-  isPositive?: never
-  isNegative?: never
-}
+  isZero: boolean;
+  isPositive?: never;
+  isNegative?: never;
+};
 
-type RandomNumberProps = PositiveNumber | NegativeNumber | Zero
+type RandomNumberProps = PositiveNumber | NegativeNumber | Zero;
 
 export const RandomNumber = ({
   value,
   isPositive,
   isNegative,
-  isZero
+  isZero,
 }: RandomNumberProps) => {
   return (
     <div>
-      {value} {isPositive && 'positive'} {isNegative && 'negative'}{' '}
-      {isZero && 'zero'}
+      {value} {isPositive && "positive"} {isNegative && "negative"}{" "}
+      {isZero && "zero"}
     </div>
-  )
-}
+  );
+};
